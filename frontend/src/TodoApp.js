@@ -22,7 +22,7 @@ const TodoApp = () => {
   const addTodo = async () => {
     if (newTodo.trim() === '') return;
     try {
-      const response = await axios.post('http://localhost:8000/api/todos', {
+      const response = await axios.post('https://interview-practice-k9ho.onrender.com/api/todos', {
         title: newTodo,
       });
       setTodos([...todos, response.data]);
@@ -34,7 +34,7 @@ const TodoApp = () => {
 
   const updateTodo = async (id, updatedFields) => {
     try {
-      const response = await axios.put(`http://localhost:8000/api/todos/${id}`, updatedFields);
+      const response = await axios.put(`https://interview-practice-k9ho.onrender.com/api/todos/${id}`, updatedFields);
       setTodos(todos.map(todo => (todo._id === id ? response.data : todo)));
     } catch (error) {
       console.error('Error updating todo', error);
@@ -43,7 +43,7 @@ const TodoApp = () => {
 
   const deleteTodo = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/api/todos/${id}`);
+      await axios.delete(`https://interview-practice-k9ho.onrender.com/api/todos/${id}`);
       setTodos(todos.filter(todo => todo._id !== id));
     } catch (error) {
       console.error('Error deleting todo', error);
