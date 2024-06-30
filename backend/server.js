@@ -10,7 +10,7 @@ const app = express();
 const server = http.createServer(app);
 
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: 'https://interview-practice-k9ho.onrender.com',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
